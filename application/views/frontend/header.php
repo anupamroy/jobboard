@@ -10,12 +10,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="<?php echo $this->config->item('site_url');?>/assets/js/jquery.min.js"></script>
 <script src="<?php echo $this->config->item('site_url');?>/assets/js/bootstrap.min.js"></script>
+
+<script src="<?php echo $this->config->item('site_url');?>/assets/js/app.js"></script>
+
+<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.js"></script>
 <!-- Custom Theme files -->
 <link href="<?php echo $this->config->item('site_url');?>/assets/css/style.css" rel='stylesheet' type='text/css' />
 <link href='//fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
-<!----font-Awesome----->
-<link href="css/font-awesome.css" rel="stylesheet"> 
-<!----font-Awesome----->
+<!----font-Awesome-->
+<link href="<?php echo $this->config->item('site_url');?>/assets/css/font-awesome.css" rel="stylesheet"> 
+<!----font-Awesome-->
 </head>
 <body>
 <nav class="navbar navbar-default" role="navigation">
@@ -27,92 +31,55 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 	        </button>
-	        <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt=""/></a>
+	        <a class="navbar-brand" href="index.html"><img src="<?php echo $this->config->item('site_url');?>/assets/images/logo.png" alt=""/></a>
 	    </div>
 	    <!--/.navbar-header-->
-	    <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" style="height: 1px;">
-	        <ul class="nav navbar-nav">
-		        <li class="dropdown">
-		            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jobs<b class="caret"></b></a>
-		            <ul class="dropdown-menu">
-			            <li><a href="location.html">Contract Jobs</a></li>
-			            <li><a href="location.html">Walkin Jobs</a></li>
-			            <li><a href="location.html">Jobs by Location</a></li>
-			            <li><a href="location.html">Jobs by Function</a></li>
-			            <li><a href="location.html">Jobs by Industry</a></li>
-			            <li><a href="location.html">Jobs by Company</a></li>
-		            </ul>
-		        </li>
-		        <li class="dropdown">
-		        	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Services<b class="caret"></b></a>
-		            <ul class="dropdown-menu multi-column columns-3">
-			            <div class="row">
-				            <div class="col-sm-4">
-					            <ul class="multi-column-dropdown">
-						            <li><a href="services.html">Action</a></li>
-						            <li><a href="services.html">Another action</a></li>
-						            <li><a href="services.html">Something else here</a></li>
-						            <li class="divider"></li>
-						            <li><a href="services.html">Separated link</a></li>
-						            <li class="divider"></li>
-						            <li><a href="services.html">One more separated link</a></li>
-					            </ul>
-				            </div>
-				            <div class="col-sm-4">
-					            <ul class="multi-column-dropdown">
-						            <li><a href="services.html">Action</a></li>
-						            <li><a href="services.html">Another action</a></li>
-						            <li><a href="services.html">Something else here</a></li>
-						            <li class="divider"></li>
-						            <li><a href="services.html">Separated link</a></li>
-						            <li class="divider"></li>
-						            <li><a href="services.html">One more separated link</a></li>
-					            </ul>
-				            </div>
-				            <div class="col-sm-4">
-					            <ul class="multi-column-dropdown">
-						            <li><a href="services.html">Action</a></li>
-						            <li><a href="services.html">Another action</a></li>
-						            <li><a href="services.html">Something else here</a></li>
-						            <li class="divider"></li>
-						            <li><a href="services.html">Separated link</a></li>
-						            <li class="divider"></li>
-						            <li><a href="services.html">One more separated link</a></li>
-					            </ul>
-				            </div>
-			            </div>
-		            </ul>
-		        </li>
-		        <li class="dropdown">
-		            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Recruiters<b class="caret"></b></a>
-		             <ul class="dropdown-menu">
-			            <li><a href="login.html">Recruiter Updates</a></li>
-			            <li><a href="recruiters.html">Recruiters you are following</a></li>
-			            <li><a href="codes.html">Shortcodes</a></li>
-		             </ul>
-		        </li>
-		        <li class="dropdown">
-		            <a href="#" class="dropdown-toggle" data-toggle="dropdown">More<b class="caret"></b></a>
-		            <ul class="dropdown-menu">
-			            <li><a href="jobs.html">Walk-ins</a></li>
-			            <li><a href="jobs.html">Bpo Jobs</a></li>
-			            <li><a href="jobs.html">Teaching Jobs</a></li>
-			            <li><a href="jobs.html">Diploma Jobs</a></li>
-			            <li><a href="jobs.html">Tech Support</a></li>
-			            <li><a href="jobs.html">Finance Jobs</a></li>
-			            <li><a href="jobs.html">Part time Jobs</a></li>
-			            <li><a href="jobs.html">Health Care</a></li>
-			            <li><a href="jobs.html">Hospitality</a></li>
-			            <li><a href="jobs.html">Internships</a></li>
-			            <li><a href="jobs.html">Research Jobs</a></li>
-			            <li><a href="jobs.html">Defence Jobs</a></li>
-		            </ul>
-		        </li>
-		        <li><a href="login.html">Login</a></li>
-		        <li><a href="resume.html">Upload Resume</a></li>
-	        </ul>
+	    <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" style="height: 1px;text-align:right;margin-top:15px;">
+	       <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+			  Job Seeker
+			</button>
+			 <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal1">
+			  Employer
+			</button>
 	    </div>
 	    <div class="clearfix"> </div>
 	  </div>
 	    <!--/.navbar-collapse-->
 	</nav>
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title" id="myModalLabel">Login</h4>
+			      </div>
+			      <div class="modal-body">
+			          <input placeholder="Username" type="text" required>
+					  <input placeholder="Password" type="password" required>
+					   <button type="button" class="btn btn-primary">Login</button>
+					   Don't have an account <a href="<?php echo $this->config->item('base_url');?><?php echo $this->config->item('index_page');?>/job_seeker/create_account">Create Now</a>
+			      </div>
+			      <div class="modal-footer">
+			        
+			       
+			      </div>
+			    </div>
+			  </div>
+	</div>
+	<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+			      </div>
+			      <div class="modal-body">
+			        ...
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			        <button type="button" class="btn btn-primary">Save changes</button>
+			      </div>
+			    </div>
+			  </div>
+	</div>
